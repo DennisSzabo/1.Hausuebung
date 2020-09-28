@@ -13,27 +13,37 @@ public class EratosthenesPrimeSieve implements PrimeSieves
 {
     int grenze;
     
-    public EratosthenesPrimeSieve()
-    {
-        
-    }
+    
     
     public EratosthenesPrimeSieve(int pGrenze)
     {
         this.grenze = pGrenze;
     }
     
+    @Override
     public boolean isPrime(int p)
     {
+        
+        int sqrt = (int) Math.sqrt(p) + 1;
+        for(int i = 2; i < sqrt; i++)
+        {
+            if(p % i == 0)
+            {
+                return false;
+            }
+        }
         return true;
     }
     
+    @Override
     public void printPrimes()
     {
-        for(int i = 2; i <= n; i++) 
+        boolean array[] = sieveOfEratosthenes(grenze);
+        sieveOfEratosthenes(grenze);
+        for(int i = 2; i <= grenze; i++) 
         { 
             
-            if(prime[i] == true) 
+            if(array[i] == true) 
                 System.out.print(i + " "); 
         } 
     }
@@ -41,7 +51,7 @@ public class EratosthenesPrimeSieve implements PrimeSieves
     
     
     
-    public void sieveOfEratosthenes(int n) 
+    public boolean[] sieveOfEratosthenes(int n) 
     { 
         // Create a boolean array "prime[0..n]" and initialize 
         // all entries it as true. A value in prime[i] will 
@@ -60,6 +70,7 @@ public class EratosthenesPrimeSieve implements PrimeSieves
                     prime[i] = false; 
             } 
         } 
+        return prime;
           
         
     
