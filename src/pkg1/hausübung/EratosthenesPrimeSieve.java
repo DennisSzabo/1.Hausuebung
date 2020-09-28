@@ -9,7 +9,7 @@ package pkg1.hausübung;
  *
  * @author szabo
  */
-public class EratosthenesPrimeSieve 
+public class EratosthenesPrimeSieve implements PrimeSieves
 {
     int grenze;
     
@@ -23,12 +23,23 @@ public class EratosthenesPrimeSieve
         this.grenze = pGrenze;
     }
     
-    
-    public interface PrimeSieve
+    public boolean isPrime(int p)
     {
-        public boolean isPrime(int p);
-        public void printPrimes();
+        return true;
     }
+    
+    public void printPrimes()
+    {
+        for(int i = 2; i <= n; i++) 
+        { 
+            
+            if(prime[i] == true) 
+                System.out.print(i + " "); 
+        } 
+    }
+    
+    
+    
     
     public void sieveOfEratosthenes(int n) 
     { 
@@ -50,13 +61,8 @@ public class EratosthenesPrimeSieve
             } 
         } 
           
-        // Print all prime numbers 
-        for(int i = 2; i <= n; i++) 
-        { 
-            if(prime[i] == true) 
-                System.out.print(i + " "); 
-        } 
+        
     
 }
-}98 
+} 
       
