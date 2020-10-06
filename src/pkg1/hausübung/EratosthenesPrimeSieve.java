@@ -5,6 +5,8 @@
  */
 package pkg1.hausübung;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author szabo
@@ -21,13 +23,13 @@ public class EratosthenesPrimeSieve implements PrimeSieves
     }
     
     @Override
-    public boolean isPrime(int p)
+    public boolean isPrime(int number)
     {
         
-        int sqrt = (int) Math.sqrt(p) + 1;
+        int sqrt = (int) Math.sqrt(number) + 1;
         for(int i = 2; i < sqrt; i++)
         {
-            if(p % i == 0)
+            if(number % i == 0)
             {
                 return false;
             }
@@ -44,7 +46,9 @@ public class EratosthenesPrimeSieve implements PrimeSieves
         { 
             
             if(array[i] == true) 
-                System.out.print(i + " "); 
+            {
+                System.out.println(i + " "); 
+            }
         } 
     }
     
@@ -53,19 +57,16 @@ public class EratosthenesPrimeSieve implements PrimeSieves
     
     public boolean[] sieveOfEratosthenes(int n) 
     { 
-        // Create a boolean array "prime[0..n]" and initialize 
-        // all entries it as true. A value in prime[i] will 
-        // finally be false if i is Not a prime, else true. 
         boolean prime[] = new boolean[n+1]; 
-        for(int i=0;i<n;i++) 
+        for(int i=0;i<n;i++)
+        {
             prime[i] = true; 
-          
+        } 
+        
         for(int p = 2; p*p <=n; p++) 
         { 
-            // If prime[p] is not changed, then it is a prime 
             if(prime[p] == true) 
             { 
-                // Update all multiples of p 
                 for(int i = p*p; i <= n; i += p) 
                     prime[i] = false; 
             } 
@@ -74,6 +75,16 @@ public class EratosthenesPrimeSieve implements PrimeSieves
           
         
     
-}
+    }
+    
+    
+    public void primeAddieren(int max) 
+    {
+        
+        
+    }
+            
+    
+    
 } 
       
