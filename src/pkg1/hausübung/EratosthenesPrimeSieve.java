@@ -5,7 +5,6 @@
  */
 package pkg1.hausübung;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 public class EratosthenesPrimeSieve implements PrimeSieves
 {
     int grenze;
-    
     
     
     public EratosthenesPrimeSieve(int pGrenze)
@@ -50,6 +48,8 @@ public class EratosthenesPrimeSieve implements PrimeSieves
                 System.out.println(i + " "); 
             }
         } 
+                System.out.println("Hier sind die Primzahlen bis zur Zahl " + grenze); 
+
     }
     
     
@@ -72,18 +72,32 @@ public class EratosthenesPrimeSieve implements PrimeSieves
             } 
         } 
         return prime;
-          
         
-    
     }
     
     
     public void primeAddieren(int max) 
     {
-        
-        
+        int eins = -1; 
+        int zwei = -1;
+
+        for (int i = 4; i <= max; i += 2) 
+        { 
+            for (int j = i - 2; j >= 2; j--) 
+            { 
+                if (isPrime(j)) 
+                {
+                    eins = i - j;
+                    zwei= j;
+
+                    break;
+                }
+            }
+        }
     }
-            
+       
+    
+           
     
     
 } 
