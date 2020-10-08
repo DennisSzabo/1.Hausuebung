@@ -24,9 +24,7 @@ public class Hausübung
         EratosthenesPrimeSieve era = new EratosthenesPrimeSieve(eingabe); 
         era.printPrimes(); 
         
-        System.out.println("Geben Sie bitte eine Obergrenze an: ");
-        grenze = scanner.nextInt();
-        era.primeAddieren(grenze);
+        
     } 
         
   

@@ -93,6 +93,7 @@ public class EratosthenesPrimeSieve implements PrimeSieves
                     break;
                 }
             }
+            System.out.println(i + ": " + eins + " + " + zwei);
         }
     }
        
